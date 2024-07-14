@@ -9,6 +9,8 @@
 </head>
 
 <body>
+<a href="/flowers/">back to homepage</a>
+<br>
 <h1>Add image</h1>
 <form action="/flowers/image_CREATE.cgi" method="POST" enctype="multipart/form-data">
   Photo: <input type="file" name="photo">

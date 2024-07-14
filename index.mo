@@ -4,17 +4,57 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+* {
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 img {
   max-width: 90vw;
   max-height: 40rem;
+}
+.edit-link {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+.images {
+  width: 100%;
+  max-width: 20rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+.images > * {
+  flex: 0 0 auto;
+}
+.images a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  background: grey;
+  margin: 1rem;
+  min-height: 3rem;
+  line-height: 3rem;
+  min-width: 3rem;
 }
 </style>
 </head>
 
 <body>
-{{#IMAGES}}
-  <img src={{.}}>
-  <br>
-{{/IMAGES}}
-<a href="/flowers/edit.cgi">edit website</a>
+<section class="images">
+  {{#IMAGES}}
+    <a href={{.}}>
+      📷
+    </a>
+  {{/IMAGES}}
+</section>
+<a class="edit-link" href="/flowers/edit.cgi">edit website</a>
 </body>

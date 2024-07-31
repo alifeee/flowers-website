@@ -21,11 +21,6 @@ img {
   max-width: 90vw;
   max-height: 40rem;
 }
-.edit-link {
-  display: block;
-  width: 100%;
-  text-align: center;
-}
 .images {
   width: 100%;
   max-width: 20rem;
@@ -56,5 +51,9 @@ img {
     </a>
   {{/IMAGES}}
 </section>
+<footer>
 <a class="edit-link" href="/flowers/edit.cgi">edit website</a>
+.
+<a href="https://github.com/alifeee/flowers-website">source</a>
+</footer>
 </body>

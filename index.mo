@@ -40,6 +40,15 @@ img {
   line-height: 3rem;
   min-width: 3rem;
 }
+.images a:nth-child(3n + 0) {
+  background: #888080;
+}
+.images a:nth-child(3n + 1) {
+  background: #808880;
+}
+.images a:nth-child(3n + 2) {
+  background: #808088;
+}
 </style>
 </head>
 

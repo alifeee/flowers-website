@@ -4,7 +4,7 @@
 echo "Content-Type: text/html"
 echo ""
 
-IMAGES=(`find "./images" -type f -not -path "*/[.]*" -name "*.jpg" -print0 | xargs -0 stat -c"%Y %y %N" | sort -rn | awk '{print $5}' | tr -d "'"`)
+IMAGES=(`find "./images" -type f -not -path "*/[.]*" -not -name "*.txt" -print0 | xargs -0 stat -c"%Y %y %N" | sort -rn | awk '{print $5}' | tr -d "'"`)
 
 # colour of each flower image
 declare -a COLOURS

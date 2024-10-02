@@ -15,7 +15,8 @@ for key in "${!IMAGES[@]}"; do
 	# full filename
   fname="${IMAGES[$key]}"
   # just filename without extension
-  basename=$(basename "${fname}" ".jpg")
+	s="${fname##*/}"
+  basename="${s%.*}"
   # 6 digit hex colour
 	colour=$(cat "./images/${basename}.txt")
   # fallback to black

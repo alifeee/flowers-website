@@ -10,11 +10,11 @@ $og_filename = $query->param("photo");
 ($ext) = $og_filename =~ /(\.[^.]+)$/;
 $ug = Data::UUID->new;
 $filename = $ug->create_str();
-$filename = "${filename}${ext}";
-#$filename =~ s/.*[\/\\](.*)/$1/;
+$fullname = "${filename}${ext}";
+#$fullname =~ s/.*[\/\\](.*)/$1/;
 $upload_filehandle = $query->upload("photo");
 
-open UPLOADFILE, ">$upload_dir/${filename}";
+open UPLOADFILE, ">$upload_dir/${fullname}";
 
 while ( <$upload_filehandle> )
 {
@@ -22,6 +22,9 @@ print UPLOADFILE;
 }
 
 close UPLOADFILE;
+
+# generate hex colour of uploaded file
+system("convert '$upload_dir/${filename}${ext}' -resize 1x1 txt:- | pcregrep -o1 '#([^ ]+)' > '${upload_dir}/${filename}.txt'");
 
 print  $query->header ( );
 print <<END_HTML;
@@ -41,7 +44,7 @@ print <<END_HTML;
 <br><br>
 <a href="/flowers">go to homepage</a>
 <br><br>
-<img height=100 width=100 src="/flowers/images/${filename}">
+<img height=100 width=100 src="/flowers/images/${fullname}">
 
 </body>
 </html>

@@ -39,26 +39,25 @@ img {
   min-height: 3rem;
   line-height: 3rem;
   min-width: 3rem;
+	background: var(--c);
 }
 .images a:nth-child(3n + 0) {
-  background: #888080;
+  rotate: -1deg;
 }
 .images a:nth-child(3n + 1) {
-  background: #808880;
+  rotate: 1deg;
 }
 .images a:nth-child(3n + 2) {
-  background: #808088;
+  rotate: 0deg;
 }
 </style>
 </head>
 
 <body>
 <section class="images">
-  {{#IMAGES}}
-    <a href={{.}}>
-      📷
-    </a>
-  {{/IMAGES}}
+	{{#LINKS}}
+		{{.}}
+	{{/LINKS}}
 </section>
 <footer>
 <a class="edit-link" href="/flowers/edit.cgi">edit website</a>

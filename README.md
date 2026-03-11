@@ -1,3 +1,5 @@
+> [!CAUTION]
+> MOVED! see <https://git.alifeee.net/flowers-website/about/>
 # Flowers website
 
 Website to add/remove pictures and display them.
